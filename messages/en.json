@@ -1,0 +1,90 @@
+{
+  "Home": {
+    "title": "Portfolio"
+  },
+  "Hero": {
+    "greeting": "Hello, I'm",
+    "name": "Christian Biringanine",
+    "role1": "Frontend Developer",
+    "role2": "Backend Developer",
+    "role3": "Full Stack Developer",
+    "intro": "I build exceptional and accessible digital experiences for the web.",
+    "hireCta": "Hire Me",
+    "learnMore": "Learn More",
+    "imageAlt": "Christian Biringanine portrait",
+    "available": "Available for work"
+  },
+  "About": {
+    "title": "About Me",
+    "subtitle": "Get to know me better",
+    "storyTitle": "My Story",
+    "story1": "I'm a passionate Software Developer with over 2 years of experience creating beautiful, functional, and user-centered digital experiences. I'm capable of ramping up quickly and efficiently.",
+    "story2": "I m familiar with the sort of fast-paced, intense environment found in a lot of Software industries, problem-solving skills, effective communication, and more I now use every day as a developer and professional with a love for clean code and accessible design",
+    "story3": "When I'm not coding or pushing pixels, you'll find me exploring new technologies, reading books and/or tech blogs, listening musics or doing sport.",
+    "downloadResume": "Download Resume",
+    "infoTitle": "Personal Info",
+    "infoName": "Name",
+    "infoAge": "Age",
+    "infoLocation": "Location",
+    "infoEmail": "Email",
+    "infoPhone": "Phone",
+    "infoAvailability": "Availability",
+    "infoAvailable": "Available"
+  },
+  "Experience": {
+    "title": "Work Experience",
+    "subtitle": "My professional journey",
+    "experienceDesc1": "Led the frontend development team in building a scalable SaaS platform. Implemented modern React patterns and optimized performance.",
+    "experienceDesc2": "Developed responsive web applications and collaborated with designers to implement pixel-perfect UI components.",
+    "experienceDesc3": "Created and maintained multiple client websites. Worked on improving site performance and implementing best practices."
+  },
+  "Skills": {
+    "title": "My Skills",
+    "subtitle": "Technologies and tools I work with",
+    "frontendTab": "Frontend",
+    "backendTab": "Backend",
+    "toolsTab": "Tools"
+  },
+  "Education": {
+    "title": "Education",
+    "subtitle": "My academic background",
+    "educationDesc1": "Specialized in advanced algorithms, distributed systems, and machine learning. Graduated with honors.",
+    "educationDesc2": "Focused on computer architecture, data structures, and software engineering principles.",
+    "educationDesc3": "Intensive 12-week program focused on modern web development technologies and practices."
+  },
+  "Contact": {
+    "title": "Contact Me",
+    "subtitle": "Let's get in touch",
+    "getInTouch": "Get In Touch",
+    "contactDesc": "Feel free to reach out to me for collaborations or just a friendly hello",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "socialTitle": "Follow me around",
+    "socialDesc": "Connect with me on social media",
+    "formTitle": "Send Me a Message",
+    "formDesc": "Have a project in mind? Let's discuss how I can help you",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Your email",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "What is this regarding?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "thankYou": "Thank you for your message!",
+    "willRespond": "I'll get back to you as soon as possible.",
+    "nameError": "Please enter your name",
+    "emailError": "Please enter a valid email",
+    "subjectError": "Subject must be at least 5 characters",
+    "messageError": "Message must be at least 10 characters"
+  },
+  "Footer": {
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "sitemap": "Sitemap"
+  }
+}

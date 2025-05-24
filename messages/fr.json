@@ -1,0 +1,90 @@
+{
+  "Home": {
+    "title": "Portfolio"
+  },
+  "Hero": {
+    "greeting": "Bonjour, je suis",
+    "name": "Christian Biringanine",
+    "role1": "Développeur Frontend",
+    "role2": "Développeur Backend",
+    "role3": "Développeur Full Stack",
+    "intro": "Je crée des expériences numériques exceptionnelles et accessibles pour le web.",
+    "hireCta": "Engagez-moi",
+    "learnMore": "En savoir plus",
+    "imageAlt": "Portrait de Christian Biringanine",
+    "available": "Disponible pour travailler"
+  },
+  "About": {
+    "title": "À Propos",
+    "subtitle": "Apprenez à me connaître",
+    "storyTitle": "Mon Histoire",
+    "story1": "Je suis un développeur logiciel passionné avec plus de 2 ans d'expérience dans la création d'expériences numériques belles, fonctionnelles et centrées sur l'utilisateur. Je suis capable de monter en compétence rapidement et efficacement.",
+    "story2": "Je suis familier avec les environnements rapides et intenses que l’on retrouve dans de nombreuses industries du logiciel. J'utilise aujourd’hui au quotidien mes compétences en résolution de problèmes, en communication efficace, ainsi que ma passion pour le code propre et le design accessible.",
+    "story3": "Quand je ne code pas ou ne travaille pas sur des interfaces, vous me trouverez en train d'explorer de nouvelles technologies, de lire des livres ou des blogs tech, d’écouter de la musique ou de faire du sport.",
+    "downloadResume": "Télécharger CV",
+    "infoTitle": "Informations Personnelles",
+    "infoName": "Nom",
+    "infoAge": "Âge",
+    "infoLocation": "Emplacement",
+    "infoEmail": "Email",
+    "infoPhone": "Téléphone",
+    "infoAvailability": "Disponibilité",
+    "infoAvailable": "Disponible"
+  },
+  "Experience": {
+    "title": "Expérience Professionnelle",
+    "subtitle": "Mon parcours professionnel",
+    "experienceDesc1": "J'ai dirigé l'équipe de développement frontend dans la construction d'une plateforme SaaS évolutive. J'ai implémenté des modèles React modernes et optimisé les performances.",
+    "experienceDesc2": "J'ai développé des applications web responsives et collaboré avec des designers pour implémenter des composants UI parfaits au pixel près.",
+    "experienceDesc3": "J'ai créé et maintenu plusieurs sites web clients. J'ai travaillé à l'amélioration des performances du site et à la mise en œuvre des meilleures pratiques."
+  },
+  "Skills": {
+    "title": "Mes Compétences",
+    "subtitle": "Technologies et outils avec lesquels je travaille",
+    "frontendTab": "Frontend",
+    "backendTab": "Backend",
+    "toolsTab": "Outils"
+  },
+  "Education": {
+    "title": "Formation",
+    "subtitle": "Mon parcours académique",
+    "educationDesc1": "Spécialisé dans les algorithmes avancés, les systèmes distribués et l'apprentissage automatique. Diplômé avec mention.",
+    "educationDesc2": "Axé sur l'architecture informatique, les structures de données et les principes d'ingénierie logicielle.",
+    "educationDesc3": "Programme intensif de 12 semaines axé sur les technologies et pratiques modernes de développement web."
+  },
+  "Contact": {
+    "title": "Contactez-moi",
+    "subtitle": "Entrons en contact",
+    "getInTouch": "Prenez Contact",
+    "contactDesc": "N'hésitez pas à me contacter pour des collaborations ou simplement pour dire bonjour",
+    "email": "Email",
+    "phone": "Téléphone",
+    "location": "Emplacement",
+    "socialTitle": "Suivez-moi",
+    "socialDesc": "Connectez-vous avec moi sur les réseaux sociaux",
+    "formTitle": "Envoyez-moi un Message",
+    "formDesc": "Vous avez un projet en tête ? Discutons de comment je peux vous aider",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Votre email",
+    "subjectLabel": "Sujet",
+    "subjectPlaceholder": "De quoi s'agit-il ?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Votre message",
+    "send": "Envoyer le Message",
+    "sending": "Envoi en cours...",
+    "thankYou": "Merci pour votre message !",
+    "willRespond": "Je vous répondrai dès que possible.",
+    "nameError": "Veuillez entrer votre nom",
+    "emailError": "Veuillez entrer un email valide",
+    "subjectError": "Le sujet doit comporter au moins 5 caractères",
+    "messageError": "Le message doit comporter au moins 10 caractères"
+  },
+  "Footer": {
+    "copyright": "Tous droits réservés.",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "sitemap": "Plan du Site"
+  }
+}
