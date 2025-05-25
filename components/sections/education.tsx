@@ -17,25 +17,25 @@ import { GraduationCap, Calendar } from "lucide-react";
 const education = [
   {
     id: 1,
-    degree: "Master of Computer Science",
-    institution: "Stanford University",
-    period: "2014 - 2016",
+    degree: "Software Development Bootcamp",
+    institution: "Microverse Inc.",
+    period: "2022",
     description: "educationDesc1",
   },
   {
     id: 2,
-    degree: "Bachelor of Science in Computer Engineering",
-    institution: "MIT",
-    period: "2010 - 2014",
+    degree: "Bachelor of Science in Electrical Engineering",
+    institution: "Kigali Independent University",
+    period: "2018 - 2022",
     description: "educationDesc2",
   },
-  {
-    id: 3,
-    degree: "Web Development Bootcamp",
-    institution: "Coding Academy",
-    period: "2009",
-    description: "educationDesc3",
-  },
+  // {
+  //   id: 3,
+  //   degree: "Web Development Bootcamp",
+  //   institution: "Coding Academy",
+  //   period: "2009",
+  //   description: "educationDesc3",
+  // },
 ];
 
 export default function Education() {
