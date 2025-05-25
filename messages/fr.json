@@ -34,9 +34,11 @@
   "Experience": {
     "title": "Expérience Professionnelle",
     "subtitle": "Mon parcours professionnel",
-    "experienceDesc1": "J'ai dirigé l'équipe de développement frontend dans la construction d'une plateforme SaaS évolutive. J'ai implémenté des modèles React modernes et optimisé les performances.",
+    "experienceDesc1": "Refonte complète de la plateforme de l’application avec un nouveau design. Collaboration étroite avec les designers pour implémenter les interfaces UI/UX, en assurant la cohérence et la réactivité sur toutes les plateformes.",
     "experienceDesc2": "J'ai développé des applications web responsives et collaboré avec des designers pour implémenter des composants UI parfaits au pixel près.",
-    "experienceDesc3": "J'ai créé et maintenu plusieurs sites web clients. J'ai travaillé à l'amélioration des performances du site et à la mise en œuvre des meilleures pratiques."
+    "experienceDesc3": "Réécrire l'ancien code hérité de l'entreprise dans un format nouveau et moderne afin d'améliorer l'expérience des utilisateurs. Développer et maintenir des solutions frontend et backend évolutives pour la plateforme de technologie de santé féminine de l'entreprise. Collaborer étroitement avec les designers pour implémenter des designs UI/UX, en garantissant la cohérence et la réactivité sur toutes les plateformes. Corriger les bugs et améliorer l'expérience des utilisateurs sur la plateforme.",
+    "experienceDesc4": "Travailler aux côtés de l'équipe d'ingénierie pour développer des logiciels pour la santé numérique et l'adoption de l'IA.",
+    "experienceDesc5": "Garantir la qualité du code source et effectuer des révisions de code et d'interface utilisateur. Proposer des améliorations à l'organisation du code pour améliorer sa qualité."
   },
   "Skills": {
     "title": "Mes Compétences",

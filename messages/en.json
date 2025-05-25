@@ -34,9 +34,11 @@
   "Experience": {
     "title": "Work Experience",
     "subtitle": "My professional journey",
-    "experienceDesc1": "Led the frontend development team in building a scalable SaaS platform. Implemented modern React patterns and optimized performance.",
+    "experienceDesc1": "Rebrand the whole application platform into a new design. Collaborate closely with designers to implement UI/UX designs, ensuring consistency and responsiveness across all platforms",
     "experienceDesc2": "Developed responsive web applications and collaborated with designers to implement pixel-perfect UI components.",
-    "experienceDesc3": "Created and maintained multiple client websites. Worked on improving site performance and implementing best practices."
+    "experienceDesc3": "Re-write the company's old legacy code into a new and up-to-date format to improve users’ experiences. Develop and maintain scalable frontend and backend solutions for the company's female health technology platform. Collaborate closely with designers to implement UI/UX designs, ensuring consistency and responsiveness across all platforms. Fixing bugs and enhancing the users’ experience on the platform",
+    "experienceDesc4": "Work alongside the Engineering team to develop software for digital health and AI adoption.",
+    "experienceDesc5": "Ensuring the quality of source code and conducting code and UI reviews. Proposed improvements to code organization to improve code quality."
   },
   "Skills": {
     "title": "My Skills",
