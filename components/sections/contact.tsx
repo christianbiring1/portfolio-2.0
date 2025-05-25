@@ -134,7 +134,9 @@ export default function Contact() {
                     <p className="text-sm text-muted-foreground">
                       {t("email")}
                     </p>
-                    <p className="font-medium">contact@example.com</p>
+                    <p className="font-medium text-[14px]">
+                      christianbiringanine22@gmail.com
+                    </p>
                   </div>
                 </div>
 
@@ -146,7 +148,7 @@ export default function Contact() {
                     <p className="text-sm text-muted-foreground">
                       {t("phone")}
                     </p>
-                    <p className="font-medium">+1 234 567 890</p>
+                    <p className="font-medium">+250 784 165 912</p>
                   </div>
                 </div>
 
@@ -158,7 +160,7 @@ export default function Contact() {
                     <p className="text-sm text-muted-foreground">
                       {t("location")}
                     </p>
-                    <p className="font-medium">New York, USA</p>
+                    <p className="font-medium">Kigali, Rwanda</p>
                   </div>
                 </div>
               </CardContent>

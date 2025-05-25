@@ -7,14 +7,22 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
+import { Raleway } from "next/font/google";
+import { cn } from "@/lib/utils";
 
 import ProfileAvatar from "@/assets/chris.jpg";
 
+const raleway = Raleway({ subsets: ["latin"] });
 export default function Hero() {
   const t = useTranslations("Hero");
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4 md:px-6">
+    <section
+      className={cn(
+        raleway.className,
+        "relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4 md:px-6"
+      )}
+    >
       {/* Background animation */}
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
@@ -40,7 +48,10 @@ export default function Hero() {
             </motion.span>
 
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
+              className={cn(
+                raleway.className,
+                "text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
+              )}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -79,7 +90,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
             >
-              <Button asChild size="lg" className="group">
+              <Button asChild size="lg" className="group cta">
                 <Link href="#contact">
                   {t("hireCta")}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
