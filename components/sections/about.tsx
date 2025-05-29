@@ -4,7 +4,9 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
-import { Download, Github, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Download } from "lucide-react";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import SectionHeading from "@/components/section-heading";
 
 export default function About() {
@@ -30,11 +32,26 @@ export default function About() {
   };
 
   const socials = [
-    { title: "github", icon: <Github />, link: "" },
-    { title: "LinkedIn", icon: <Linkedin />, link: "" },
-    { title: "X", icon: <Twitter />, link: "" },
-    { title: "Instagram", icon: <Instagram />, link: "" },
-    // { title: "github", icon: GithubIcon, link: "" },
+    {
+      title: "github",
+      icon: <FaGithub className="w-6 h-6" />,
+      link: "https://github.com/christianbiring1",
+    },
+    {
+      title: "LinkedIn",
+      icon: <FaLinkedin className="w-6 h-6" />,
+      link: "https://www.linkedin.com/in/christian-biringanine/",
+    },
+    {
+      title: "X",
+      icon: <FaXTwitter className="w-6 h-6" />,
+      link: "https://twitter.com/Christianbirin4",
+    },
+    {
+      title: "Instagram",
+      icon: <FaInstagram className="w-6 h-6" />,
+      link: "https://www.instagram.com/christian__bir/",
+    },
   ];
 
   return (
