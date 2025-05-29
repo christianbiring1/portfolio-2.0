@@ -46,7 +46,7 @@ export default function SectionHeading({
         {title}
       </motion.h2>
       <motion.p
-        className="mt-4 text-muted dark:text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10"
+        className="mt-4 text-muted-foreground dark:text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
