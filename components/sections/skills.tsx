@@ -5,6 +5,22 @@ import { useInView } from "react-intersection-observer";
 import SectionHeading from "@/components/section-heading";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import { FaNodeJs, FaReact } from "react-icons/fa";
+import {
+  RiNextjsFill,
+  RiHtml5Fill,
+  RiCss3Fill,
+  RiTailwindCssFill,
+  RiFirebaseFill,
+} from "react-icons/ri";
+import {
+  SiMongodb,
+  SiPostgresql,
+  SiSass,
+  SiTypescript,
+  SiRubyonrails,
+} from "react-icons/si";
+
 // This would typically come from a data file or CMS
 const skills = {
   frontend: [
@@ -58,6 +74,55 @@ export default function Skills() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+
+  const stacks = [
+    {
+      name: "HTML5",
+      stackIcon: <RiHtml5Fill className="w-10 h-10 text-orange-500" />,
+    },
+    {
+      name: "CSS5",
+      stackIcon: <RiCss3Fill className="w-10 h-10 text-blue-600" />,
+    },
+    {
+      name: "SASS",
+      stackIcon: <SiSass className="w-10 h-10 text-fuchsia-400" />,
+    },
+    {
+      name: "Tailwind",
+      stackIcon: <RiTailwindCssFill className="w-10 h-10 text-cyan-500" />,
+    },
+    {
+      name: "React",
+      stackIcon: <FaReact className="w-10 h-10" color="blue" />,
+    },
+    { name: "Next.js", stackIcon: <RiNextjsFill className="w-10 h-10" /> },
+    {
+      name: "TypeScript",
+      stackIcon: <SiTypescript className="w-10 h-10 text-blue-600" />,
+    },
+    {
+      name: "Node.js",
+      stackIcon: <FaNodeJs className="w-10 h-10 text-emerald-500" />,
+    },
+
+    {
+      name: "MongoDB",
+      stackIcon: <SiMongodb className="w-10 h-10 text-emerald-500" />,
+    },
+    {
+      name: "PostgreSQL",
+      stackIcon: <SiPostgresql className="w-10 h-10 text-blue-900" />,
+    },
+    {
+      name: "Firebase",
+      stackIcon: <RiFirebaseFill className="w-10 h-10 text-amber-500" />,
+    },
+    {
+      name: "Ruby on Rails",
+      stackIcon: <SiRubyonrails className="w-10 h-10 text-red-700" />,
+    },
+  ];
 
   return (
     <section id="skills" className="py-20 px-4 md:px-6 bg-muted/50">
@@ -113,26 +178,15 @@ export default function Skills() {
           animate={inView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          {[
-            "React",
-            "Next.js",
-            "TypeScript",
-            "Node.js",
-            "Tailwind",
-            "MongoDB",
-          ].map((tech) => (
+          {stacks.map((tech) => (
             <div
-              key={tech}
+              key={tech.name}
               className="flex flex-col items-center justify-center p-6 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <div className="h-12 w-12 mb-4 flex items-center justify-center">
-                <img
-                  src={`/placeholder.svg?height=48&width=48&text=${tech}`}
-                  alt={tech}
-                  className="max-h-full max-w-full"
-                />
+              <div className="h-10 w-10 mb-4 flex items-center justify-center">
+                {tech.stackIcon}
               </div>
-              <span className="text-sm font-medium">{tech}</span>
+              <span className="text-sm font-medium">{tech.name}</span>
             </div>
           ))}
         </motion.div>
