@@ -67,13 +67,16 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formspree.io/f/your-form-id", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
+      const response = await fetch(
+        `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORM_SPREE_ID}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        }
+      );
 
       if (response.ok) {
         setIsSubmitted(true);
