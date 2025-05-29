@@ -1,5 +1,5 @@
 "use client";
-
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -7,6 +7,12 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
+import {
+  // motion,
+  useScroll,
+  useTransform,
+  // AnimatePresence,
+} from "framer-motion";
 import { Raleway } from "next/font/google";
 import { cn } from "@/lib/utils";
 
@@ -16,6 +22,16 @@ const raleway = Raleway({ subsets: ["latin"] });
 export default function Hero() {
   const t = useTranslations("Hero");
 
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+
   return (
     <section
       className={cn(
@@ -23,12 +39,15 @@ export default function Hero() {
         "relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4 md:px-6"
       )}
     >
-      {/* Background animation */}
-      <div className="absolute inset-0 w-full h-full">
-        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-      </div>
+      {/* Animated Background Elements */}
+      <motion.div
+        style={{ y, opacity }}
+        className="absolute inset-0 pointer-events-none"
+      >
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-40 right-10 w-96 h-96 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-4000"></div>
+      </motion.div>
 
       <div className="container mx-auto max-w-6xl z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
