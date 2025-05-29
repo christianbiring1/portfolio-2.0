@@ -1,12 +1,9 @@
 "use client";
-
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import SectionHeading from "@/components/section-heading";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-import {} from "lucide-react";
 
 // This would typically come from a data file or CMS
 const skills = {
