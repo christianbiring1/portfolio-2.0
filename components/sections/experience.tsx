@@ -71,7 +71,7 @@ const experiences = [
     id: 5,
     company: "Microverse Inc.",
     position: "TS Engineer - Code reviewer",
-    period: "Sept 2022 - October 2023",
+    period: "2022 - 2023",
     description: "experienceDesc5",
     technologies: [
       "Git",
