@@ -53,8 +53,6 @@ export default function SectionHeading({
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         {subtitle}
-        Showcasing innovative solutions and creative implementations across
-        various technologies and domains
       </motion.p>
     </motion.div>
   );
