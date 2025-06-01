@@ -201,7 +201,7 @@ const ProjectsSection = () => {
                   ></div>
 
                   {/* Floating Action Buttons */}
-                  <AnimatePresence>
+                  {/* <AnimatePresence>
                     {hoveredProject === index && (
                       <motion.div
                         initial={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -223,6 +223,70 @@ const ProjectsSection = () => {
                           </motion.a>
                         ) : (
                           <div className="bg-black/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/40 transition-colors">
+                            <LockIcon className="w-6 h-6" />
+                          </div>
+                        )}
+                        <motion.a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-black/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/40 transition-colors"
+                          whileHover={{ scale: 1.1, rotate: -5 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <ExternalLink className="w-5 h-5" />
+                        </motion.a>
+                      </motion.div>
+                    )}
+                  </AnimatePresence> */}
+                  {/* Floating Action Buttons */}
+                  <div className="absolute top-4 right-4 flex gap-2 md:hidden">
+                    {project.github ? (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-black/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/40 transition-colors"
+                      >
+                        <Github className="w-5 h-5" />
+                      </a>
+                    ) : (
+                      <div className="bg-black/20 backdrop-blur-sm text-white p-3 rounded-full">
+                        <LockIcon className="w-6 h-6" />
+                      </div>
+                    )}
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-black/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/40 transition-colors"
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                  </div>
+
+                  <AnimatePresence>
+                    {hoveredProject === index && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute top-4 right-4 hidden md:flex gap-2"
+                      >
+                        {project.github ? (
+                          <motion.a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-black/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-black/40 transition-colors"
+                            whileHover={{ scale: 1.1, rotate: 5 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <Github className="w-5 h-5" />
+                          </motion.a>
+                        ) : (
+                          <div className="bg-black/20 backdrop-blur-sm text-white p-3 rounded-full">
                             <LockIcon className="w-6 h-6" />
                           </div>
                         )}
