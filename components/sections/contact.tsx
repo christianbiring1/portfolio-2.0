@@ -22,6 +22,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -71,36 +72,23 @@ export default function Contact() {
     console.log("Form spree >>>>>>>>>>", process.env.NEXT_PUBLIC_FORM_SPREE_ID);
 
     try {
-      // const response = await fetch(
-      //   `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORM_SPREE_ID}`,
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify(values),
-      //   }
-      // );
-
       const response = await fetch(
         `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORM_SPREE_ID}`,
         {
           method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...values,
-            _replyto: values.email,
-          }),
+          // headers: {
+          //   "Content-Type": "application/json",
+          // },
+          body: JSON.stringify(values),
         }
       );
 
       if (response.ok) {
         setIsSubmitted(true);
+        toast("Form submitted successfully!");
         form.reset();
       } else {
+        toast("Something went wrong!");
         throw new Error("Form submission failed");
         console.log("error submitting the form");
       }
