@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useForm as useFormSpree, ValidationError } from "@formspree/react";
 import {
   Card,
   CardContent,
@@ -33,8 +34,10 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Contact() {
   const t = useTranslations("Contact");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  // const [state, handleSubmit] = useFormSpree("manjnqrn");
+  const [state, handleSubmit] = useFormSpree(
+    process.env.NEXT_PUBLIC_FORM_SPREE_ID
+  );
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -67,37 +70,36 @@ export default function Contact() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-
     console.log("Form spree >>>>>>>>>>", process.env.NEXT_PUBLIC_FORM_SPREE_ID);
+    console.log("Validated form values:", values);
 
     try {
-      const response = await fetch(
-        `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORM_SPREE_ID}`,
-        {
-          method: "POST",
-          // headers: {
-          //   "Content-Type": "application/json",
-          // },
-          body: JSON.stringify(values),
-        }
-      );
+      // Create a FormData object for Formspree
+      const formData = new FormData();
+      formData.append("name", values.name);
+      formData.append("email", values.email);
+      formData.append("subject", values.subject);
+      formData.append("message", values.message);
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        toast("Form submitted successfully!");
-        form.reset();
-      } else {
-        toast("Something went wrong!");
-        throw new Error("Form submission failed");
-        console.log("error submitting the form");
-      }
+      // Submit to Formspree
+      await handleSubmit(formData);
+
+      // Note: The success handling is done in the useEffect below
     } catch (error) {
       console.error("Error submitting form:", error);
+      toast.error("Something went wrong. Please try again.");
     } finally {
-      setIsSubmitting(false);
+      // setIsSubmitting(false);
     }
   }
+
+  // Handle success state
+  useEffect(() => {
+    if (state.succeeded) {
+      toast.success("The form has been submitted successfully!");
+      form.reset();
+    }
+  }, [state.succeeded, form]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -230,7 +232,7 @@ export default function Contact() {
                 <CardDescription>{t("formDesc")}</CardDescription>
               </CardHeader>
               <CardContent>
-                {isSubmitted ? (
+                {state.succeeded ? (
                   <div className="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 p-4 rounded-lg">
                     <p className="font-medium">{t("thankYou")}</p>
                     <p className="mt-2">{t("willRespond")}</p>
@@ -238,8 +240,12 @@ export default function Contact() {
                 ) : (
                   <Form {...form}>
                     <form
-                      onSubmit={form.handleSubmit(onSubmit)}
+                      onSubmit={
+                        // handleSubmit
+                        form.handleSubmit(onSubmit)
+                      }
                       className="space-y-6"
+                      id="contact-form"
                     >
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <FormField
@@ -250,6 +256,7 @@ export default function Contact() {
                               <FormLabel>{t("nameLabel")}</FormLabel>
                               <FormControl>
                                 <Input
+                                  id="name"
                                   placeholder={t("namePlaceholder")}
                                   {...field}
                                 />
@@ -258,23 +265,30 @@ export default function Contact() {
                             </FormItem>
                           )}
                         />
-
-                        <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>{t("emailLabel")}</FormLabel>
-                              <FormControl>
-                                <Input
-                                  placeholder={t("emailPlaceholder")}
-                                  {...field}
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                        <div>
+                          <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>{t("emailLabel")}</FormLabel>
+                                <FormControl>
+                                  <Input
+                                    id="email"
+                                    placeholder={t("emailPlaceholder")}
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          <ValidationError
+                            prefix="Email"
+                            field="email"
+                            errors={state.errors}
+                          />
+                        </div>
                       </div>
 
                       <FormField
@@ -285,6 +299,7 @@ export default function Contact() {
                             <FormLabel>{t("subjectLabel")}</FormLabel>
                             <FormControl>
                               <Input
+                                id="subject"
                                 placeholder={t("subjectPlaceholder")}
                                 {...field}
                               />
@@ -293,31 +308,38 @@ export default function Contact() {
                           </FormItem>
                         )}
                       />
-
-                      <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>{t("messageLabel")}</FormLabel>
-                            <FormControl>
-                              <Textarea
-                                placeholder={t("messagePlaceholder")}
-                                className="min-h-32"
-                                {...field}
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                      <div>
+                        <FormField
+                          control={form.control}
+                          name="message"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>{t("messageLabel")}</FormLabel>
+                              <FormControl>
+                                <Textarea
+                                  id="message"
+                                  placeholder={t("messagePlaceholder")}
+                                  className="min-h-32"
+                                  {...field}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <ValidationError
+                          prefix="Message"
+                          field="message"
+                          errors={state.errors}
+                        />
+                      </div>
 
                       <Button
                         type="submit"
                         className="w-full"
-                        disabled={isSubmitting}
+                        disabled={state.submitting}
                       >
-                        {isSubmitting ? (
+                        {state.submitting ? (
                           <>
                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                             {t("sending")}
