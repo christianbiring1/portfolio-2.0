@@ -13,6 +13,8 @@ import LanguageSwitcher from "@/components/language-switcher";
 import Loading from "@/components/loading";
 import ProjectsSection from "@/components/sections/projects";
 
+import { Toaster } from "@/components/ui/sonner";
+
 export default function Home() {
   const t = useTranslations("Home");
 
@@ -20,6 +22,7 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-b from-background to-background/80">
       <LanguageSwitcher />
       <Suspense fallback={<Loading />}>
+        <Toaster />
         <Hero />
         <About />
         <Experience />
