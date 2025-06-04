@@ -383,6 +383,16 @@ const ProjectsSection = () => {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 + 0.8 }}
                     whileHover={{ x: 5 }}
+                    onClick={() => {
+                      // const url = project.github ? project.github || "https://www.github.com/christianbiring1"
+                      window.open(
+                        `${
+                          project.github ||
+                          "https://www.github.com/christianbiring1"
+                        }`,
+                        "_blank"
+                      );
+                    }}
                   >
                     View Project Details
                     <motion.div
@@ -412,12 +422,15 @@ const ProjectsSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.button
-            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-purple-500/25 transition-all duration-300"
+            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 cursor-pointer"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 20px 25px -5px rgba(168, 85, 247, 0.4)",
             }}
             whileTap={{ scale: 0.95 }}
+            onClick={() =>
+              window.open("https://www.github.com/christianbiring1", "_blank")
+            }
           >
             View All Projects
           </motion.button>
