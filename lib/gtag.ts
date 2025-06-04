@@ -15,7 +15,7 @@ export const event = ({
   category,
   label,
   value,
-}: Record<string, any>) => {
+}: Record<string, unknown>) => {
   if (typeof window !== "undefined" && GA_MEASUREMENT_ID) {
     window.gtag("event", action, {
       event_category: category,
