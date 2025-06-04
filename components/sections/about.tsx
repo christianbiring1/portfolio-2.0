@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Eye } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import SectionHeading from "@/components/section-heading";
@@ -78,8 +78,11 @@ export default function About() {
               {t("story3")}
             </p>
 
-            <Button className="mt-6">
-              <Download className="mr-2 h-4 w-4" />
+            <Button
+              className="mt-6 cursor-pointer"
+              onClick={() => window.open("/resume.pdf", "_blank")}
+            >
+              <Eye className="mr-2 h-4 w-4" />
               {t("downloadResume")}
             </Button>
           </motion.div>
@@ -90,7 +93,7 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { label: t("infoName"), value: "Christian Biringanine" },
-                { label: t("infoAge"), value: "24" },
+                { label: t("infoAge"), value: "25" },
                 { label: t("infoLocation"), value: "Kigali, Rwanda" },
                 {
                   label: t("infoEmail"),
