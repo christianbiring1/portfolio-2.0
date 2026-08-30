@@ -13,12 +13,9 @@ import {
   useTransform,
   // AnimatePresence,
 } from "framer-motion";
-import { Raleway } from "next/font/google";
-import { cn } from "@/lib/utils";
 
 import ProfileAvatar from "@/assets/chris.jpg";
 
-const raleway = Raleway({ subsets: ["latin"] });
 export default function Hero() {
   const t = useTranslations("Hero");
 
@@ -33,12 +30,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <section
-      className={cn(
-        raleway.className,
-        "relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4 md:px-6"
-      )}
-    >
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4 md:px-6">
       {/* Animated Background Elements */}
       <motion.div
         style={{ y, opacity }}
@@ -67,10 +59,7 @@ export default function Hero() {
             </motion.span>
 
             <motion.h1
-              className={cn(
-                raleway.className,
-                "text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
-              )}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
