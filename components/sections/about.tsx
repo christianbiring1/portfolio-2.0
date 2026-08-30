@@ -93,7 +93,7 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { label: t("infoName"), value: "Christian Biringanine" },
-                { label: t("infoAge"), value: "25" },
+                // { label: t("infoAge"), value: "25" },
                 { label: t("infoLocation"), value: "Kigali, Rwanda" },
                 {
                   label: t("infoEmail"),
