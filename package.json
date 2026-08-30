@@ -7,7 +7,7 @@
     "dev": "next dev --turbopack -p 8000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
@@ -21,8 +21,10 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.12.1",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.511.0",
     "next": "15.3.2",
+    "next-auth": "^4.24.15",
     "next-intl": "^4.1.0",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
@@ -30,7 +32,9 @@
     "react-hook-form": "^7.56.4",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
+    "react-markdown": "^10.1.0",
     "react-type-animation": "^3.2.0",
+    "remark-gfm": "^4.0.1",
     "sonner": "^2.0.3",
     "tailwind-merge": "^3.3.0",
     "tailwindcss-animate": "^1.0.7",
