@@ -1,7 +1,4 @@
-"use client";
-
 import { Suspense } from "react";
-import { useTranslations } from "next-intl";
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
 import Experience from "@/components/sections/experience";
@@ -13,11 +10,18 @@ import LanguageSwitcher from "@/components/language-switcher";
 import Loading from "@/components/loading";
 import ProjectsSection from "@/components/sections/projects";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import ArticlesSection from "@/components/articles/articles-section";
+import { getArticles } from "@/lib/articles";
 
 import { Toaster } from "@/components/ui/sonner";
 
-export default function Home() {
-  const t = useTranslations("Home");
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const articles = await getArticles(locale);
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-background to-background/80">
@@ -33,6 +37,7 @@ export default function Home() {
         <About />
         <Experience />
         <ProjectsSection />
+        <ArticlesSection articles={articles} locale={locale} />
         <Skills />
         <Education />
         <Contact />
