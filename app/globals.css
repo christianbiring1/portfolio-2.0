@@ -86,6 +86,191 @@
   animation: wiggle 2s linear infinite;
 }
 
+.article-prose {
+  color: rgb(51 65 85);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+.dark .article-prose {
+  color: rgb(203 213 225);
+}
+
+.article-prose > * + * {
+  margin-top: 1.5rem;
+}
+
+.article-prose h1,
+.article-prose h2,
+.article-prose h3,
+.article-prose h4 {
+  color: rgb(15 23 42);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  scroll-margin-top: 6rem;
+}
+
+.dark .article-prose h1,
+.dark .article-prose h2,
+.dark .article-prose h3,
+.dark .article-prose h4 {
+  color: white;
+}
+
+.article-prose h1 {
+  font-size: 2.25rem;
+  margin-top: 2.75rem;
+}
+
+.article-prose h2 {
+  font-size: 1.75rem;
+  margin-top: 2.75rem;
+}
+
+.article-prose h3 {
+  font-size: 1.35rem;
+  margin-top: 2.25rem;
+}
+
+.article-prose strong {
+  color: rgb(30 41 59);
+  font-weight: 750;
+}
+
+.dark .article-prose strong {
+  color: rgb(241 245 249);
+}
+
+.article-prose a {
+  color: rgb(109 40 217);
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-color: rgb(196 181 253);
+  text-underline-offset: 0.2em;
+}
+
+.dark .article-prose a {
+  color: rgb(196 181 253);
+  text-decoration-color: rgb(109 40 217);
+}
+
+.article-prose ul,
+.article-prose ol {
+  padding-left: 1.5rem;
+}
+
+.article-prose ul {
+  list-style: disc;
+}
+
+.article-prose ol {
+  list-style: decimal;
+}
+
+.article-prose li {
+  padding-left: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.article-prose li::marker {
+  color: rgb(139 92 246);
+  font-weight: 700;
+}
+
+.article-prose blockquote {
+  border-left: 4px solid rgb(139 92 246);
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: rgb(245 243 255);
+  color: rgb(76 29 149);
+  font-size: 1.05em;
+  font-style: italic;
+  padding: 1rem 1.25rem;
+}
+
+.dark .article-prose blockquote {
+  background: rgb(76 29 149 / 0.18);
+  color: rgb(221 214 254);
+}
+
+.article-prose code {
+  border-radius: 0.35rem;
+  background: rgb(241 245 249);
+  color: rgb(109 40 217);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.86em;
+  padding: 0.18em 0.38em;
+}
+
+.dark .article-prose code {
+  background: rgb(30 41 59);
+  color: rgb(196 181 253);
+}
+
+.article-prose pre {
+  overflow-x: auto;
+  border: 1px solid rgb(51 65 85);
+  border-radius: 1rem;
+  background: rgb(15 23 42);
+  box-shadow: 0 16px 40px rgb(15 23 42 / 0.12);
+  padding: 1.25rem;
+}
+
+.article-prose pre code {
+  background: transparent;
+  color: rgb(226 232 240);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  padding: 0;
+}
+
+.article-prose img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 16px 40px rgb(15 23 42 / 0.12);
+}
+
+.article-prose hr {
+  border: 0;
+  border-top: 1px solid rgb(226 232 240);
+  margin-block: 2.75rem;
+}
+
+.dark .article-prose hr {
+  border-color: rgb(51 65 85);
+}
+
+.article-prose table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.925rem;
+}
+
+.article-prose th,
+.article-prose td {
+  border: 1px solid rgb(226 232 240);
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+}
+
+.dark .article-prose th,
+.dark .article-prose td {
+  border-color: rgb(51 65 85);
+}
+
+.article-prose th {
+  background: rgb(248 250 252);
+  color: rgb(30 41 59);
+  font-weight: 750;
+}
+
+.dark .article-prose th {
+  background: rgb(30 41 59);
+  color: rgb(241 245 249);
+}
+
 @keyframes wiggle {
   0%,
   7% {
