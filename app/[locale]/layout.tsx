@@ -1,19 +1,21 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 
-// const inter = Inter({ subsets: ["latin"] });
-const raleway = Raleway({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Christian Biringanine | Portfolio",
+  title: {
+    default: "Christian Biringanine | Software Engineer",
+    template: "%s | Christian Biringanine",
+  },
   description:
-    "Chistian Biringanine's professional portfolio showcasing my skills and experience",
+    "Christian Biringanine's portfolio, projects, experience, and writing on software engineering and product design.",
+  metadataBase: process.env.NEXT_PUBLIC_SITE_URL
+    ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
+    : undefined,
 };
 
 export function generateStaticParams() {
@@ -22,20 +24,15 @@ export function generateStaticParams() {
 
 export default async function RootLayout(props: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
   const { children } = props;
-
-  // ✅ Await the params explicitly
-  const { locale } = await Promise.resolve(props.params);
-
-  // console.log("locale >>>>>>>>", locale);
+  const { locale } = await props.params;
 
   let messages;
   try {
     messages = (await import(`@/messages/${locale}.json`)).default;
 
-    // console.log("messages >>>>>>>>>", messages);
   } catch (error) {
     console.error("❌ Error loading messages:", error);
     notFound();
@@ -58,7 +55,7 @@ export default async function RootLayout(props: {
           `}
         </Script>
       </head>
-      <body className={raleway.className}>
+      <body className="font-sans">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider
             attribute="class"
